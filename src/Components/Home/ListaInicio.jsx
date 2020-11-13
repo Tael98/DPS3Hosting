@@ -44,6 +44,11 @@ const ListaInicio = () => {
                     console.log("El usuario "+user.data().displayName+" no tiene un valor válido de horas.")
                 }
             });
+            users.sort((a, b) => (a.neto > b.neto) ? -1 : 1);
+            let len = users.length;
+            List(users);
+            setMax(users[0].displayName);
+            setMin(users[len-1].displayName);
         });
     };
 
