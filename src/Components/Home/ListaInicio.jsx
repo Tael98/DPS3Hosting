@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { firestore } from "../../firebase";
 
-const CalcularSalario = () => {
+const ListaInicio = () => {
     const [idList, List] = useState([]);
     const [max, setMax] = useState("");
     const [min, setMin] = useState("");
