@@ -16,7 +16,7 @@ const CalcularSalario = () => {
                 let restantes = 0;
                 if(horast > 0){
                     if(horast <= 160){
-                        salario_base = 160 * 9.75;
+                        salario_base = horast * 9.75;
                     }else if(horast > 160 && horast <= 200){
                         restantes = horast - 160;
                         salario_base = (160 * 9.75) + (restantes * 11.50);
