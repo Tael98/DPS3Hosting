@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { UserContext } from "../providers/UserProvider";
 import { auth } from "../firebase";
-import { Router, Link } from "@reach/router";
+import { Router, Link, navigate } from "@reach/router";
 
 import CalcularSalario from "./Home/CalcularSalario";
 import ListaInicio from "./Home/ListaInicio";
 import Crud from "./Home/Crud";
+import Perfil from "./Home/Perfil";
 
 const ProfilePage = () => {
 
@@ -18,21 +19,34 @@ const ProfilePage = () => {
 
     const signOut = () => {
         auth.signOut();
+        navigate("/");
     };
 
     return (
         <div>
-            <nav className="navbar navbar-inverse">
-                <div className="container-fluid">
-                    <div className="navbar-header">
-                        <a className="navbar-brand">Parcial 3</a>
-                    </div>
-                    <ul className="nav navbar-nav">
-                        <li className="active"><Link to="/">Inicio</Link></li>
-                        <li><Link to="crud">Administrar empleados</Link></li>
-                        <li><Link to="calcularSalario">Cálculo de salario</Link></li>
-                        <button className="btn btn-danger" onClick={() => { signOut() }}>
-                            Sign out</button>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="">Parcial 3</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <Link className="nav-link" to="/">Inicio</Link>
+                        </li>
+                        <li class="nav-item active">
+                            <Link className="nav-link" to="crud">Administrar empleados</Link>
+                        </li>
+                        <li class="nav-item active">
+                            <Link className="nav-link" to="calcularSalario">Cálculo de salario</Link>
+                        </li>
+                        <li class="nav-item active">
+                            <Link className="nav-link" to="perfil">Perfil de usuario</Link>
+                        </li>
+                        <button className="btn btn-danger nav-item" onClick={() => { signOut() }}>
+                            Sign out
+                        </button>
                     </ul>
                 </div>
             </nav>
@@ -40,29 +54,10 @@ const ProfilePage = () => {
                 <ListaInicio exact path="/" />
                 <Crud exact path="crud" />
                 <CalcularSalario exact path="calcularSalario" />
+                <Perfil exact path="perfil" />
             </Router>
 
-            {/* <div className="container">
-                <div className="row">
-                    <div className="col-md-12">
-                        <span className="float-right">
-                            <div
-                                style={{
-                                    background: `url(${photoURL || 'https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png'})  no-repeat center center`,
-                                    backgroundSize: "cover",
-                                    height: "100px",
-                                    width: "100px"
-                                }}
-                                className="border border-blue-300"
-                            ></div>
-                            <br></br>
-             Nombre : <h2 className="text-2xl font-semibold">{displayName}</h2>
-                            <br></br>
-             Correo: <h3 className="italic">{email}</h3>
-                        </span>
-                    </div>
-                </div>
-            </div> */}
+
         </div>
     )
 };

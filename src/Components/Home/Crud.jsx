@@ -3,7 +3,9 @@ import Crud2 from "./Crud2";
 
 import { firestore } from "../../firebase";
 import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
+toast.configure();
 const Crud = () => {
     const [Usuarios, setUsuarios] = useState([]);
     const [currentId, setCurrentId] = useState("");
@@ -21,7 +23,7 @@ const Crud = () => {
     const onDeleteUser = async (id) => {
       if (window.confirm("are you sure you want to delete this User?")) {
         await firestore.collection("users").doc(id).delete();
-        toast("Se elimino un usuario", {
+        toast("Se eliminó un usuario", {
           type: "error",
           //autoClose: 2000
         });
@@ -36,12 +38,12 @@ const Crud = () => {
       try {
         if (currentId === "") {
           await firestore.collection("users").doc().set(UsuarioObject);
-          toast("Se agrego un usuario", {
+          toast("Se agregó un usuario", {
             type: "success",
           });
         } else {
           await firestore.collection("users").doc(currentId).update(UsuarioObject);
-          toast("Se actualizo un usuario", {
+          toast("Se actualizó un usuario", {
             type: "info",
           });
           setCurrentId("");

@@ -58,7 +58,8 @@ const ListaInicio = () => {
 
     return(
         <div className="container-fluid">
-            <h1><b>Usuarios registrados: </b></h1>
+            <h1 className="text-center"><b>Usuarios registrados</b></h1>
+            <br/>
             <table className="table centered">
                 <thead className="thead-dark">
                     <tr>
@@ -74,7 +75,7 @@ const ListaInicio = () => {
                             <td>{User.id}</td>
                             <td>{User.name}</td>
                             <td>{User.horas_trabajadas}</td>
-                            <td>{User.neto}</td>
+                            <td>${User.neto}</td>
                         </tr>
                     ))}
                 </tbody>

@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import "./styles.css";
+import "./estilo.css";
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 ReactDOM.render(
     <App />,

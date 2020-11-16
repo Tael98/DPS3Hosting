@@ -41,8 +41,8 @@ const SignIn = () => {
         <ul className="nav navbar-nav">
         </ul>
       </nav>
-      <div className="mt-8">
-        <div className="border border-blue-400 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8">
+      <div className="container mt-8">
+        <div className="border border-blue-400 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8 py-3">
           <form>
             {error !== null && (
               <div className="py-4 bg-red-600 w-full text-white text-center mb-3">

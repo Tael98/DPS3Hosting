@@ -43,11 +43,11 @@ const SignUp = () => {
         <ul className="nav navbar-nav">
         </ul>
       </nav>
-      <div className="mt-8">
+      <div className="mt-8 container">
         <h1 className="text-3xl mb-2 text-center font-bold">Crear Cuenta</h1>
-        <div className="border border-blue-400 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8">
+        <div className="border border-blue-400 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8 py-3">
           {error !== null && (
-            <div className="py-4 bg-red-600 w-full text-white text-center mb-3">
+            <div className="py-4 bg-warning w-100 text-white text-center mb-3">
               {error}
             </div>
           )}
@@ -87,7 +87,7 @@ const SignUp = () => {
                 onChange={(event) => onChangeHandler(event)} />
             </div>  
                        
-            <button className="bg-green-400 hover:bg-green-500 w-full py-2 text-white" 
+            <button className="btn btn-success btn-block py-2 text-white" 
               onClick={event => {
                 createUserWithEmailAndPasswordHandler(event);
               }}

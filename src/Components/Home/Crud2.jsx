@@ -81,6 +81,8 @@ const Crud2 = (props) => {
           placeholder="Ingrese las horas trabajadas"
           className="form-control"
           onChange={handleInputChange}
+          min="1"
+          max="250"
         />
       </div>
       <button className="btn btn-primary btn-block">

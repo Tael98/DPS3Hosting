@@ -79,11 +79,11 @@ const CalcularSalario = () => {
                             <td>{User.id}</td>
                             <td>{User.name}</td>
                             <td>{User.horas_trabajadas}</td>
-                            <td>{User.isss}</td>
-                            <td>{User.afp}</td>
-                            <td>{User.renta}</td>
-                            <td>{User.liquido}</td>
-                            <td>{User.neto}</td>
+                            <td>${User.isss}</td>
+                            <td>${User.afp}</td>
+                            <td>${User.renta}</td>
+                            <td>${User.liquido}</td>
+                            <td>${User.neto}</td>
                         </tr>
                     ))}
                 </tbody>
